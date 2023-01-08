@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %} 
+
+{% block title %}
+<title>SHOW STUDENT</title> 
+ {% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ROLL</th>
+        <th scope="col">NAME</th>
+        <th scope="col">CITY</th>
+        <th scope="col">MARKS</th>
+        <th scope="col">RECORDED ON</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in obj %} 
+        <tr>
+        <th scope="row">{{i.roll}}</th>
+        <td>{{i.name}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.marks}}</td>
+        <td>{{i.recorded_on}}</td>
+        <td>
+            <a href="{% url 'update_url' i.roll %}"><button class="btn btn-success col-4">UPDATE</button></a>
+            <a href="{% url 'delete_url' i.roll %}"><button class="btn btn-danger col-4">DELETE</button></a>
+        </td>
+      </tr> 
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{%  endblock %}
+

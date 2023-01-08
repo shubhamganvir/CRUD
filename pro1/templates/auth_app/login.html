@@ -1,0 +1,23 @@
+{% extends 'layout.html %}
+
+
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    ENTER USERNAME:<input type="text" for="un" id="un" name="un" >
+
+    ENTER PASSWORD:<input type="password" for="pw" id="pw" name="pw">
+
+    <br/>
+    <br />
+    <input type="submit" value="LOGIN">
+
+
+</form>
+
+{% endblock %}

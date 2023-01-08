@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>DELETE CONFIRMATION</title>
+{% endblock%}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+<center>
+    <p>DO YOU REALLY WANT TO DELETE  ?</p>
+    <input type="submit" value="YES" class="btn btn-warning">
+   <a href="{% url 'show_url' %}" ><input type="button" value="NO"></a>
+</center>
+</form>
+{% endblock %}
