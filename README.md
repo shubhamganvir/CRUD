@@ -1,0 +1,2 @@
+# CRUD
+cjc django project
